@@ -18,6 +18,12 @@ User flow
 User stories
 ---------------
 user's requirements 
+
 	General UI
 		User should be able to use the app on the mobile device
 		User should be able to use the app on the computer screen
+	Category Page
+		User can see all unique tournaments and events from the selected category
+		User can click on the event and navigate to event page
+	Event Page
+		User can see teams playing in the event, score (if exists), date and time

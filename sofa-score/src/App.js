@@ -32,26 +32,26 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      {/* <div className="App">
       {
-        (user.email != "") ?
+        (user.email != "") ? */}
          <Switch>
            <Route>
               <HomePage path="/HomePage"/> 
            </Route>
         </Switch> 
-        : 
+        {/* : 
 
       <Switch>
         <div className="login-body">
           <Route>
-              <LoginForm Login={Login} error={error} path='/'/>
+              <LoginForm Login={Login} error={error} path='/Login'/>
           </Route>
         </div>
      </Switch> 
 
       }
-    </div>
+    </div> */}
     </Router>
   
   );

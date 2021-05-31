@@ -1,38 +1,47 @@
 import React from 'react'
 import Category from './Category';
 
+
 class  CategoryListPage extends React.Component {
 
     constructor(props) {
         super(props);
       
         this.state = {
-            categories : {}
+            categories : [],
+            date : (new Date()).toISOString().split('T')[0]
         };
-      }
+    }
 
+    async GetCategories(sport) {
+        sport = 'football';
 
-
-    async GetCategories(sport,date,offset) {
-        const response = await fetch('https://master.dev.sofascore.com/api/v1/sport'+sport+'/'+date+'/'+offset+'/categories');
+        const response = await fetch('https://master.dev.sofascore.com/api/v1/sport/'+sport+'/'+this.state.date+'/7200/categories');
     
         //fetch all categories
         const data = await response.json()
 
-    
-      }
+        this.setState({ categories:  data.categories });
+    }
 
-      render() {
-        return (
-          //foreach category, display a Category element with the corespoding parameters
-          <main className="">  
-            <h2>Categories</h2>
-            <div className="row"> 
-                  <Category/>
-            </div>
-          </main>
-        )
-      }
+    componentDidMount() {
+      this.GetCategories();
+    }
+  
+
+    render() {
+      return (
+        //foreach category, display a Category element with the corespoding parameters
+        <div>
+          {
+            this.state.categories.map(category => (
+                <Category></Category>
+              )
+            )
+          }
+        </div>
+      )
+    }
 }
 
 export default CategoryListPage

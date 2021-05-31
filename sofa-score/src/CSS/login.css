@@ -1,5 +1,18 @@
 
+input, button {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
 
+.login-body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #53565A;
+}
 .login-container{
     display: flex;
     width: 800px;

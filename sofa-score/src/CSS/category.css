@@ -1,0 +1,25 @@
+.category-card{
+    border : 1px solid black;
+    margin : 7px;
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 50px;
+    line-height: 50px; /* same as height! */
+    border-radius: 8px;
+    display: flex;
+    color: #f3f3f3;
+    font-size: 14px;
+    justify-content: space-between;
+}
+.category-card:hover{
+    cursor: pointer;
+    background-color:#292828 ;
+}
+
+.category-logo{
+    padding: 3px;
+}
+.category-logo img{
+    height: 100%;
+}

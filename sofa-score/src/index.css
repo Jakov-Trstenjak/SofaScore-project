@@ -5,4 +5,10 @@
     font-family: montserrat, sans-serif;
 }
 
+.category-list-container{
+    padding: 30px;
+}
 
+.homepage-body{
+    background-color: #333;
+}

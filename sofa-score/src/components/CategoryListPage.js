@@ -17,7 +17,7 @@ class  CategoryListPage extends React.Component {
         sport = 'football';
 
         const response = await fetch('https://master.dev.sofascore.com/api/v1/sport/'+sport+'/'+this.state.date+'/7200/categories');
-    
+
         //fetch all categories
         const data = await response.json()
 
@@ -32,10 +32,10 @@ class  CategoryListPage extends React.Component {
     render() {
       return (
         //foreach category, display a Category element with the corespoding parameters
-        <div>
+        <div className='category-list-container'>
           {
-            this.state.categories.map(category => (
-                <Category></Category>
+            this.state.categories.map(cat => (
+                <Category category={cat.category} tournamentId={cat.uniqueTournamentId}/>
               )
             )
           }

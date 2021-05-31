@@ -6,8 +6,12 @@ export default class HomePage extends Component {
     render() {
         return (
             <div>   
-                <Navbar></Navbar>
-                <CategoryListPage></CategoryListPage>
+                <div className="homepage-header">
+                    <Navbar></Navbar>
+                </div>
+                <div className="homepage-body">
+                    <CategoryListPage></CategoryListPage>
+                </div>
             </div>
 
         )

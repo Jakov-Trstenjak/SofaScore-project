@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../CSS/category.css';
+import Tournament from './Tournament';
 
 
 
@@ -10,6 +11,7 @@ class Category extends Component {
 
         this.state = {
             category : props.category,
+            tournamentIds : props.uniqueTournamentIds,
             imgUrl : "https://www.sofascore.com/static/images/flags/"+(props.category.alpha2 || '').toString().toLowerCase() +".png"
         }
     }
@@ -18,14 +20,18 @@ class Category extends Component {
 
     render() {
         return (
-        <div className="category-card">
-            <div className="category-logo"> 
-                <img src={this.state.imgUrl} alt=""/>
+            <div>
+                {
+                     this.state.tournamentIds.map( id => (
+
+                        <Tournament category={this.state.category} uniqueTournamentId={id}/>   
+
+                     )
+                    )
+                }
+               
             </div>
-            <div className="category-data">
-                <h2></h2>
-            </div>
-        </div>
+            
         )
     }
 }

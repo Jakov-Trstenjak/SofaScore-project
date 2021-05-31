@@ -11,21 +11,17 @@ class Category extends Component {
 
         this.state = {
             category : props.category,
-            tournamentIds : props.uniqueTournamentIds,
             imgUrl : "https://www.sofascore.com/static/images/flags/"+(props.category.alpha2 || '').toString().toLowerCase() +".png"
         }
     }
 
-    //https://www.sofascore.com/static/images/flags/en.png
 
     render() {
         return (
             <div>
                 {
-                     this.state.tournamentIds.map( id => (
-
-                        <Tournament category={this.state.category} uniqueTournamentId={id}/>   
-
+                     this.props.uniqueTournamentIds.map( uniqueTournamentId => (
+                        <Tournament category={this.state.category} uniqueTournamentId={uniqueTournamentId}/>   
                      )
                     )
                 }

@@ -8,28 +8,29 @@ export default class Tournament extends Component {
 
         this.state = {
             category : props.category,
-            tournamentId : props.uniqueTournamentId,
+            uniqueTournament : '',
+            uniqueTournamentId : props.uniqueTournamentId,
             imgUrl : "https://www.sofascore.com/static/images/flags/"+(props.category.alpha2 || '').toString().toLowerCase() +".png",
-            tournaments: [],
+             
         }
     }
 
-    // https://master.dev.sofascore.com/api/v1/category/1/scheduled-events/2021-05-07
     
+   
     async GetTournament() {
 
-        const response = await fetch('https://master.dev.sofascore.com/api/v1/category/'+this.state.category.id+'/scheduled-events/2021-05-07');
+        //https://master.dev.sofascore.com/api/v1/unique-tournament/17
+        const response = await fetch('https://master.dev.sofascore.com/api/v1/unique-tournament/'+ this.props.uniqueTournamentId);
 
         // fetch all categories
         const data = await response.json();
 
-        this.setState({ tournaments:  data.events });
+        this.setState({ uniqueTournament:  data.uniqueTournament });
     }
 
     componentDidMount() {
       this.GetTournament();
     }
-
     render() {
         return (
             <div className="category-container"> 
@@ -38,7 +39,7 @@ export default class Tournament extends Component {
                         <div className="category-logo"> 
                             <img src={this.state.imgUrl} alt={globeIcon}/>
                         </div>
-                        <p>{this.state.category.name} -  </p>
+                        <p>{this.state.category.name} - {this.state.uniqueTournament.name} </p>
                     </div>
                 
                     <div className="right-wrapper">

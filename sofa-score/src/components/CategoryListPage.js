@@ -34,8 +34,8 @@ class  CategoryListPage extends React.Component {
         //foreach category, display a Category element with the corespoding parameters
         <div className='category-list-container'>
           {
-            this.state.categories.map(cat => (
-                <Category category={cat.category} uniqueTournamentIds={cat.uniqueTournamentIds} />
+            this.state.categories.map(category => (
+                <Category category={category.category} uniqueTournamentIds={category.uniqueTournamentIds} />
               )
             )
           }

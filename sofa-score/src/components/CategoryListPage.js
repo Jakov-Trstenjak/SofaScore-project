@@ -35,7 +35,7 @@ class  CategoryListPage extends React.Component {
         <div className='category-list-container'>
           {
             this.state.categories.map(category => (
-                <Category category={category.category} uniqueTournamentIds={category.uniqueTournamentIds} />
+                <Category category={category.category} uniqueTournamentIds={category.uniqueTournamentIds} date={this.state.date} />
               )
             )
           }

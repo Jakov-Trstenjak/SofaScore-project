@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../CSS/category.css';
 import globeIcon from'../files/globe-icon.png';
+import Event from './Event';
 
 export default class Tournament extends Component {
     constructor(props){
@@ -8,10 +9,10 @@ export default class Tournament extends Component {
 
         this.state = {
             category : props.category,
+            events : props.events,
             uniqueTournament : '',
             uniqueTournamentId : props.uniqueTournamentId,
             imgUrl : "https://www.sofascore.com/static/images/flags/"+(props.category.alpha2 || '').toString().toLowerCase() +".png",
-             
         }
     }
 
@@ -31,6 +32,8 @@ export default class Tournament extends Component {
     componentDidMount() {
       this.GetTournament();
     }
+
+
     render() {
         return (
             <div className="category-container"> 
@@ -47,7 +50,11 @@ export default class Tournament extends Component {
                     </div>
                 </div>
                 <div className="category-card-body">
-                    
+                    {/* {
+                         this.props.events.map(event => (
+                            <Event event={event} />
+                          ))
+                    } */}
                 </div>
             </div>
        

@@ -23,7 +23,7 @@
 }
 
 .category-card-body{
-    height: 200px;
+    min-height: 200px;
     background-color: #2d2c2c;
     margin-bottom: 8px;
     border : 1px solid black;

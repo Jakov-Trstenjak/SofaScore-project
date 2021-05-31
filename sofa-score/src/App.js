@@ -43,9 +43,11 @@ function App() {
         : 
 
       <Switch>
-        <Route>
-            <LoginForm Login={Login} error={error} path='/'/>
-        </Route>
+        <div className="login-body">
+          <Route>
+              <LoginForm Login={Login} error={error} path='/'/>
+          </Route>
+        </div>
      </Switch> 
 
       }

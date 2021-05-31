@@ -1,32 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: montserrat, sans-serif;
-}
 
-input, button {
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-}
 
-.App {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #53565A;
-}
-
-.container{
+.login-container{
     display: flex;
     width: 800px;
     justify-content: space-between;
 }
 
-.container::after{
+.login-container::after{
     content: '';
     display: block;
     position: absolute;
@@ -51,7 +31,7 @@ form {
     position: relative;
 }
 
-form .form-inner{
+form .login-form-inner{
     position: relative;
     display: block;
     background-color: #fff;
@@ -59,7 +39,7 @@ form .form-inner{
     z-index: 2;
 }
 
-form .form-inner h2{
+form .login-form-inner h2{
    color: #888;
    font-size:  26px;
    font-weight: 500;
@@ -67,13 +47,13 @@ form .form-inner h2{
    margin-bottom: 30px;
 }
 
-form .form-inner .form-group{
+form .login-form-inner .login-form-group{
     display: block;
     width: 300px;
     margin-bottom: 15px;
 }
 
-.form-inner .form-group label{
+.login-form-inner .login-form-group label{
     display: block;
     color: #667;
     font-size: 12px;
@@ -81,11 +61,11 @@ form .form-inner .form-group{
     transition: 0.4s;
 }
 
-.form-inner .form-group:focus-within label{
+.login-form-inner .login-form-group:focus-within label{
     color: #fe4880;
 }
 
-form .form-inner .form-group input{
+form .login-form-inner .login-form-group input{
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -93,15 +73,15 @@ form .form-inner .form-group input{
     border-radius: 8px;
     transition: 0.4s;
 }
-form .form-inner .form-group input:focus{
+form .login-form-inner .login-form-group input:focus{
    box-shadow: 0 px 0 px 3 px rgba((0), 0, 0, 0.2);
 }
 
-.wrapper{
+.login-wrapper{
     text-align: center;
 }
 
-form .form-inner input[type="submit"]{
+form .login-form-inner input[type="submit"]{
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
@@ -114,7 +94,7 @@ form .form-inner input[type="submit"]{
     cursor: pointer;
 }
 
-form .form-inner input[type="submit"]:hover{
+form .login-form-inner input[type="submit"]:hover{
     background-position: 100% 0%;
 }
 

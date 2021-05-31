@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { ReactComponent as Logo } from '../files/data1.svg';
-
-
+import '../CSS/login.css';
 
 
 function LoginForm({Login, error}) {

@@ -1,23 +1,25 @@
 
 import React , {useState} from 'react';
 import LoginForm from './components/LoginForm';
+import HomePage from './components/HomePage';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
 
 
 function App() {
 
   const adminUser = {
-      email: "adminUser@admin.com",
-      password: "12345678"
+      email: "admin@admin.com",
+      password: "123"
   }
 
   const[user, setUser] = useState({name:"", email:"" });
   const [error, setError] = useState("");
 
   const Login = details => {
-    console.log(details);
 
     if(details.email == adminUser.email && details.password == adminUser.password){
-      console.log("Logged in");
       setUser({
         name : details.name,
         email : details.email
@@ -28,24 +30,28 @@ function App() {
 
   }
 
-  const Logout = () => {
-    console.log("Logout")
-    setUser({name:"",email:""})
-  }
-
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       {
-        (user.email != "") ? (
-        <div className="welcome">
-          <h2>Welcome, <span>{user.name}</span></h2>
-          <button>Logout</button>
-        </div>
-        ) : (
-          <LoginForm Login={Login} error={error}/>
-        )
+        (user.email != "") ?
+         <Switch>
+           <Route>
+              <HomePage path="/HomePage"/> 
+           </Route>
+        </Switch> 
+        : 
+
+      <Switch>
+        <Route>
+            <LoginForm Login={Login} error={error} path='/'/>
+        </Route>
+     </Switch> 
+
       }
     </div>
+    </Router>
+  
   );
 }
 export default App;

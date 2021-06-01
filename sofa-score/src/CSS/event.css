@@ -11,11 +11,15 @@
 }
 
 .scoreboard{
-    color: #f1704f;
     font-weight: 600;
     font-size: 13px;
     width: 25px;
 }
+
+.match-live{
+    color: #f1704f;
+}
+
 .event-time p{
     width: 50px;
 }

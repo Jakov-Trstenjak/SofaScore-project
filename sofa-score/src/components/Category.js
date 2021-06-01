@@ -40,9 +40,25 @@ class Category extends Component {
 
         let dict = {};
         
-        this.state.events.map( e => { 
-                   dict[e.tournament.uniqueTournament.id] = e
+       this.state.events.forEach(e => {
+
+           if(dict[e.tournament.uniqueTournament.id]){
+                var data = (dict[e.tournament.uniqueTournament.id]);
+                var array = [];
+
+                data.map( d => {
+                    array.push(d);
                 })
+                array.push(e);
+                
+                dict[e.tournament.uniqueTournament.id] = array;
+           }else{
+               var array = [];
+               array.push(e)
+            dict[e.tournament.uniqueTournament.id] = array;
+           }
+           
+       });
 
         this.setState({ dict : dict });
 

@@ -1,6 +1,7 @@
 .category-container{
     max-width: 1000px;
     margin: auto;
+    margin-bottom: 20px;
 
 }
 
@@ -23,11 +24,11 @@
 }
 
 .category-card-body{
-    min-height: 200px;
     background-color: #2d2c2c;
     margin-bottom: 8px;
     border : 1px solid black;
     border-top: none;
+    padding: 10px;
     border-radius: 0px 0px 4px 4px;
 }
 

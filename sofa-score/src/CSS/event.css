@@ -1,0 +1,10 @@
+.event-container{
+    color:#fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.event-container p{
+    margin-top: 5px;
+}

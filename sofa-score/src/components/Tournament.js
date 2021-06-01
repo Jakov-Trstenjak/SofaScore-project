@@ -50,11 +50,11 @@ export default class Tournament extends Component {
                     </div>
                 </div>
                 <div className="category-card-body">
-                    {/* {
+                    {
                          this.props.events.map(event => (
                             <Event event={event} />
                           ))
-                    } */}
+                    }
                 </div>
             </div>
        

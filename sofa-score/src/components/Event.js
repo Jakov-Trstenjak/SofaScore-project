@@ -16,7 +16,9 @@ export default class Event extends Component {
         return (
             <div className="event-container">
                 
-                <p>{this.props.event.homeTeam.name} - {this.props.event.awayTeam.name}</p>
+                <p>{this.props.event.homeTeam.name}</p>
+                <div className="versus"><p>-</p></div> 
+                <p>{this.props.event.awayTeam.name}</p>
             </div>
         )
     }

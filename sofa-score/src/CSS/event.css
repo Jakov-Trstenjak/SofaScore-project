@@ -3,8 +3,24 @@
     text-align: center;
     padding: 5px;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
 }
 
 .event-container p{
     margin-top: 5px;
+    margin-left:10px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+
+@media screen and (max-width : 600px){
+    .event-container p{
+       width: auto;
+    }
+    .versus{
+        margin: auto;
+    }
+
 }

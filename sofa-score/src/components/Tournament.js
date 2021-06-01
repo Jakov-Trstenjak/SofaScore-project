@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../CSS/category.css';
-import globeIcon from'../files/globe-icon.png';
+import globe from '../files/globe-icon.png'
 import Event from './Event';
 
 export default class Tournament extends Component {
@@ -12,7 +12,7 @@ export default class Tournament extends Component {
             events : props.events,
             uniqueTournament : '',
             uniqueTournamentId : props.uniqueTournamentId,
-            imgUrl : "https://www.sofascore.com/static/images/flags/"+(props.category.alpha2 || '').toString().toLowerCase() +".png",
+            imgUrl : (props.category.alpha2) ? ("https://www.sofascore.com/static/images/flags/"+(props.category.alpha2).toString().toLowerCase() +".png") : ('') ,
         }
     }
 
@@ -33,14 +33,18 @@ export default class Tournament extends Component {
       this.GetTournament();
     }
 
-
     render() {
+        const imgUrl = this.state.imgUrl;
         return (
             <div className="category-container"> 
                 <div className="category-card-header">
                     <div className="left-wrapper">
                         <div className="category-logo"> 
-                            <img src={this.state.imgUrl} alt={globeIcon}/>
+                             {(imgUrl) ? (
+                                <img src={this.state.imgUrl} alt=''/>
+                               ) : (
+                                <img src={globe} alt=''/>
+                               )}
                         </div>
                         <p>{this.state.category.name} - {this.state.uniqueTournament.name} </p>
                     </div>

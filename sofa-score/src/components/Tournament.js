@@ -46,7 +46,9 @@ export default class Tournament extends Component {
                                 <img src={globe} alt=''/>
                                )}
                         </div>
-                        <p>{this.state.category.name} - {this.state.uniqueTournament.name} </p>
+                        <div className="tournament-name" title="See more information about this tournament">
+                            <p>{this.state.category.name} - {this.state.uniqueTournament.name} </p>
+                        </div>
                     </div>
                 
                     <div className="right-wrapper">

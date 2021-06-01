@@ -18,9 +18,6 @@
     font-size: 14px;
     justify-content: space-between;
 }
-.category-card-header:hover{
-    cursor: pointer;
-}
 
 .category-card-body{
     background-color: #2d2c2c;
@@ -32,6 +29,11 @@
 .category-logo img{
     width: 32px;
     height: 32px;
+}
+
+.tournament-name:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .left-wrapper{

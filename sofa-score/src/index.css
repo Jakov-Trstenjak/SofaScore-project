@@ -12,3 +12,29 @@
 .homepage-body{
     background-color: #333;
 }
+
+.ml3{
+    margin-left: 3px;
+}
+.mr3{
+    margin-right: 3px;
+}
+.ml5{
+    margin-left: 5px;
+}
+.mr5{
+    margin-right: 5px;
+}
+.ml8{
+    margin-left: 8px;
+}
+.mr8{
+    margin-right: 8px;
+}
+
+.text-align-right{
+    text-align: right;
+}
+.text-align-left{
+    text-align: left;
+}

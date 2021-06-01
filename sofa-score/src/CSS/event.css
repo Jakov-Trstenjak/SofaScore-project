@@ -1,19 +1,42 @@
 .event-container{
     color:#fff;
     text-align: center;
-    padding: 5px;
     font-size: 14px;
     display: flex;
-    justify-content: center;
+    padding: 8px;
+}
+.event-container:hover{
+    background-color: #565656;
+    cursor: pointer;
 }
 
-.event-container p{
-    margin-top: 5px;
-    margin-left:10px;
-    margin-right: 10px;
-    width: 200px;
+.scoreboard{
+    color: #f1704f;
+    font-weight: 600;
+    font-size: 13px;
+    width: 25px;
+}
+.event-time p{
+    width: 50px;
 }
 
+.home-team{
+    display: flex;
+}
+.away-team{
+    display: flex;
+}
+.team-logo{
+    width: 25px;
+    height: 25px;
+}
+.team-name{
+    width: 350px;
+}
+
+.versus{
+    width: 20px;
+}
 
 @media screen and (max-width : 600px){
     .event-container p{

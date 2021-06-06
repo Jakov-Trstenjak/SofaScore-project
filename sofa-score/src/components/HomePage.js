@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import CategoryListPage from './CategoryListPage'
-import Navbar from './Navbar'
 
 export default class HomePage extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
+        //sport should be cointained in this.props.match.sport
         return (
             <div>   
-                <div className="homepage-header">
-                    <Navbar></Navbar>
-                </div>
-                <div className="homepage-body">
-                    <CategoryListPage></CategoryListPage>
+                <div className="body">
+                    <CategoryListPage sport={'football'}></CategoryListPage>
                 </div>
             </div>
 

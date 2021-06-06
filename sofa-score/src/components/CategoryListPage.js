@@ -11,11 +11,14 @@ class  CategoryListPage extends React.Component {
             categories : [],
             date : (new Date()).toISOString().split('T')[0]
         };
+
+        this.GetCategories = this.GetCategories.bind(this)
+
     }
 
-    async GetCategories(sport) {
-        sport = 'football';
+    async GetCategories() {
 
+        const sport = this.props.sport
         const response = await fetch('https://master.dev.sofascore.com/api/v1/sport/'+sport+'/'+this.state.date+'/7200/categories');
 
         //fetch all categories
@@ -27,7 +30,6 @@ class  CategoryListPage extends React.Component {
     componentDidMount() {
       this.GetCategories();
     }
-  
 
     render() {
       return (

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../CSS/category.css';
 import globe from '../files/globe-icon.png'
 import Event from './Event';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 export default class Tournament extends Component {
     constructor(props){
@@ -14,6 +16,8 @@ export default class Tournament extends Component {
             uniqueTournamentId : props.uniqueTournamentId,
             imgUrl : (props.category.alpha2) ? ("https://www.sofascore.com/static/images/flags/"+(props.category.alpha2).toString().toLowerCase() +".png") : ('') ,
         }
+
+        this.GetTournament = this.GetTournament.bind(this)
     }
 
     
@@ -35,6 +39,8 @@ export default class Tournament extends Component {
 
     render() {
         const imgUrl = this.state.imgUrl;
+
+
         return (
             <div className="category-container"> 
                 <div className="category-card-header">
@@ -58,7 +64,11 @@ export default class Tournament extends Component {
                 <div className="category-card-body">
                     {
                          this.props.events.map(event => (
-                            <Event event={event} />
+                            <Switch>
+                                <Route>
+                                    <Event event={event} />
+                                </Route>
+                            </Switch> 
                           ))
                     }
                 </div>

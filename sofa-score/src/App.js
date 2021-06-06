@@ -1,10 +1,10 @@
 
 import React , {useState} from 'react';
 import LoginForm from './components/LoginForm';
+import Navbar from './components/Navbar'
 import HomePage from './components/HomePage';
+import EventInfo from './components/EventInfo';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-
 
 
 function App() {
@@ -32,26 +32,31 @@ function App() {
 
   return (
     <Router>
-      {/* <div className="App">
+      <div className="App">
       {
-        (user.email != "") ? */}
-         <Switch>
-           <Route>
-              <HomePage path="/HomePage"/> 
-           </Route>
-        </Switch> 
-        {/* : 
-
-      <Switch>
-        <div className="login-body">
-          <Route>
-              <LoginForm Login={Login} error={error} path='/Login'/>
-          </Route>
-        </div>
-     </Switch> 
+        (user.email != "") ? (
+          <div>
+          <div className="navigation-bar">
+              <Navbar></Navbar>
+          </div>
+          <Switch>
+            <Route exact path="/:sport?" component={HomePage} />
+            <Route exact path="/event/:id" component={EventInfo} />
+          </Switch> 
+       
+          </div>
+        ) 
+         :
+        <Switch>
+          <div className="login-body">
+            <Route>
+                <LoginForm Login={Login} error={error} path='/Login'/>
+            </Route>
+          </div>
+      </Switch> 
 
       }
-    </div> */}
+    </div> 
     </Router>
   
   );

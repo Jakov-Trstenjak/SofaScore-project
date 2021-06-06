@@ -26,9 +26,6 @@ class Category extends Component {
 
         this.setState({ events:  data.events });
         this.mapEventsWithTournaments();
-
-        console.log(this.state.dict)
-
     }
 
     componentDidMount() {

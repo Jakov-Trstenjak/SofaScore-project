@@ -1,12 +1,12 @@
 .navbar {
     overflow: hidden;
+    display:flex;
     background-color: #232222;
     height: 40px;
     position: sticky;
   }
   
   .navbar a {
-    line-height: 40px; /* same as height! */
     color: #fff;
     text-align: center;
     padding: 14px 16px;

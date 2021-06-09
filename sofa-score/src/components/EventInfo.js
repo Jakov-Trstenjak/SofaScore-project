@@ -10,7 +10,9 @@ export default class EventInfo extends Component {
         super();
 
         this.state = {
-           event : ''
+           event : {
+
+           }
         }
         this.GetEventInfo = this.GetEventInfo.bind(this)
 
@@ -18,7 +20,7 @@ export default class EventInfo extends Component {
 
 
     async GetEventInfo(){
-
+        alert("Get event info")
         const response = await fetch('	https://master.dev.sofascore.com/api/v1/event/'+this.props.match.id);
 
         const data = await response.json();
@@ -30,9 +32,13 @@ export default class EventInfo extends Component {
         this.GetEventInfo();
     }
 
+    componentDidUpdate(){
+        this.GetEventInfo();
+    }
+
     render() {
 
-        console.log("render")
+        console.log('event: '+ this.state.event)
         const startTime = this.state.event.startTimestamp.toLocaleTimeString(navigator.language);
 
         const homeTeamLogoUrl = 'https://master.dev.sofascore.com/api/v1/team/'+ this.state.event.homeTeam.id+'/image';

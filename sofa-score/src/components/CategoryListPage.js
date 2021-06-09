@@ -31,6 +31,10 @@ class  CategoryListPage extends React.Component {
       this.GetCategories();
     }
 
+    componentDidUpdate(){
+      this.GetCategories();
+    }
+
     render() {
       return (
         //foreach category, display a Category element with the corespoding parameters

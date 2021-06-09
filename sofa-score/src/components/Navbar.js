@@ -34,12 +34,6 @@ export default class Navbar extends Component {
                             <p>Rugby</p>
                     </Link>
                     <Link to={{
-                        pathname: '/hokey',
-                        state: { event: this.props.event }
-                    }}>
-                            <p>Hokey</p>
-                    </Link>
-                    <Link to={{
                         pathname: '/handball',
                         state: { event: this.props.event }
                     }}>

@@ -10,9 +10,7 @@ export default class EventInfo extends Component {
         super();
 
         this.state = {
-           event : {
-
-           }
+           event : {}
         }
         this.GetEventInfo = this.GetEventInfo.bind(this)
 
@@ -20,20 +18,22 @@ export default class EventInfo extends Component {
 
 
     async GetEventInfo(){
-        alert("Get event info")
-        const response = await fetch('	https://master.dev.sofascore.com/api/v1/event/'+this.props.match.id);
+        const response = await fetch('	https://master.dev.sofascore.com/api/v1/event/'+this.props.match.params.id);
 
         const data = await response.json();
 
+        alert(this.props.match.params.id)
         this.setState({ event:  data.event });
     }
         
     componentDidMount(){
+        alert(this.props.match.params.id)
+
         this.GetEventInfo();
     }
 
     componentDidUpdate(){
-        this.GetEventInfo();
+        alert('updated')
     }
 
     render() {
